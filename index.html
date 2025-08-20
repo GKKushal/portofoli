@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Harshith K — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #0d0d0d;
+            /* true black */
+            --panel: linear-gradient(145deg, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.85));
+            --glass: rgba(255, 255, 255, 0.05);
+            --muted: #a0a0a0;
+            --text: #f5f5f5;
+            --accent: #ff0080;
+            /* neon pink */
+            --accent-2: #00ffe0;
+            /* neon aqua */
+            --radius: 16px;
+            --card-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            margin: 0;
+            font-family: Poppins, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.05), transparent), radial-gradient(circle at 80% 80%, rgba(0, 255, 224, 0.05), transparent)
+        }
+        /* container */
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px
+        }
+        /* topbar */
+        
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase
+        }
+        /* nav */
+        
+        .nav {
+            display: flex;
+            gap: 18px
+        }
+        
+        .nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 12px;
+            transition: 0.3s
+        }
+        
+        .nav a:hover {
+            color: var(--accent-2);
+            background: rgba(255, 255, 255, 0.05)
+        }
+        /* hero */
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 36px;
+            align-items: center;
+            margin-top: 40px
+        }
+        
+        .card {
+            background: var(--panel);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--glass-border)
+        }
+        
+        .intro h1 {
+            font-size: clamp(32px, 6vw, 50px);
+            margin: 0;
+            color: var(--text);
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.4)
+        }
+        
+        .intro p.lead {
+            color: var(--muted);
+            margin: 16px 0 20px;
+            font-size: 18px
+        }
+        
+        .ctas {
+            display: flex;
+            gap: 14px;
+            align-items: center
+        }
+        
+        .btn {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #0d0d0d;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 0, 128, 0.25);
+            transition: 0.3s
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 224, 0.25)
+        }
+        
+        .btn.secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.1)
+        }
+        /* profile */
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px
+        }
+        
+        .avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--accent);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.4)
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 12px
+        }
+        
+        .socials a {
+            display: inline-grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent-2);
+            text-decoration: none;
+            transition: 0.3s
+        }
+        
+        .socials a:hover {
+            background: var(--accent-2);
+            color: #0d0d0d
+        }
+        /* sections */
+        
+        main {
+            margin-top: 40px
+        }
+        
+        section {
+            margin: 40px 0
+        }
+        
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px
+        }
+        
+        h2 {
+            font-weight: 700;
+            margin: 0;
+            color: var(--accent-2);
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+        
+        .subtext {
+            color: var(--muted);
+            font-size: 14px
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 24px
+        }
+        /* skills */
+        
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+        
+        .skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+        /* Removed graph elements */
+        
+        .skill .bar {
+            display: none;
+        }
+        /* project */
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px
+        }
+        
+        .project {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(20, 20, 20, 0.95));
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid var(--glass-border);
+            transition: transform .3s ease, box-shadow .3s ease
+        }
+        
+        .project:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 255, 224, 0.2)
+        }
+        
+        .project h4 {
+            margin: 6px 0 10px;
+            color: var(--accent)
+        }
+        
+        .meta {
+            font-size: 13px;
+            color: var(--muted)
+        }
+        /* certs */
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px
+        }
+        
+        .cert {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border)
+        }
+        
+        footer {
+            color: var(--muted);
+            text-align: center;
+            margin: 40px 0;
+            font-size: 14px
+        }
+        /* responsive */
+        
+        @media (max-width:980px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+            .grid-2 {
+                grid-template-columns: 1fr
+            }
+            .avatar {
+                width: 180px;
+                height: 180px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">Harshith K</div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certification">Certification</a>
+            </nav>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="card intro">
+                <h1>Hello, I'm Harshith</h1>
+                <p class="lead">Product-focused designer and data science student — I build clean interfaces and practical ML-backed features.</p>
+                <div class="ctas">
+                    <a class="btn" href="#projects">View Projects</a>
+                    <a class="btn secondary" href="mailto:harshithk5443@gmail.com">Email Me</a>
+                </div>
+
+                <div style="margin-top:20px; display:flex; gap:14px; align-items:center; color:var(--muted)">
+                    <div style="font-weight:700">Mangalore, Karnataka</div>
+                    <div style="opacity:0.6">•</div>
+                    <div class="subtext">B.E CSE (Data Science) — GPA 8.25/10</div>
+                </div>
+            </div>
+
+            <aside class="card profile">
+                <div class="avatar"><img src="https://i.postimg.cc/z3qQFMR7/profile.jpg" alt="Harshith"></div>
+                <div style="text-align:center">
+                    <div style="font-weight:700">Harshith K</div>
+                    <div class="subtext">Digital Product Designer • Data Science</div>
+                </div>
+
+                <div class="socials" style="margin-top:8px">
+                    <a href="https://github.com/GKKushal" target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+                    <a href="https://www.linkedin.com/in/harshith-k-838021331/" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+                    <a href="https://www.instagram.com/_mr_delicacy_soul_06/?hl=en" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- ABOUT -->
+        <main>
+            <section id="about">
+                <div class="section-head">
+                    <h2>About</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>I am pursuing B.E. CSE (Data Science) at Vivekananda College of Engineering and Technology, Puttur. I enjoy merging user-centered design with data-driven approaches to build meaningful products.</p>
+
+                        <h3 style="margin-top:18px; color:var(--accent)">Education & Coursework</h3>
+                        <p class="meta">Sept 2022 – Aug 2026 — Relevant courses: Data Structures, OS, Theory of Computation, Networks, DAA, Big Data Analytics, UI/UX, DBMS, AI & ML</p>
+                    </div>
+
+                    <aside>
+                        <div class="card" style="padding:16px; margin-bottom:14px">
+                            <div style="font-weight:700; color:var(--accent-2)">Contact</div>
+                            <div class="subtext">Mangalore, Karnataka</div>
+                            <div style="margin-top:8px"><a href="mailto:harshithk5443@gmail.com">harshithk5443@gmail.com</a></div>
+                            <div class="subtext" style="margin-top:6px"><a href="tel:+918762915443">+91 8762915443</a></div>
+                        </div>
+
+                        <div class="card" style="padding:16px">
+                            <div style="font-weight:700; color:var(--accent-2)">Technologies</div>
+                            <div class="subtext" style="margin-top:8px">C · Java · Python · SQL · PostgreSQL · MongoDB</div>
+                            <div class="subtext" style="margin-top:6px">Pandas · Numpy · Scikit-learn · Tableau · Power BI · GCP · Figma</div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <div class="section-head">
+                    <h2>Skills</h2>
+                </div>
+                <div class="card">
+                    <div class="skill-list">
+                        <div class="skill">
+                            <div><strong>Python</strong></div>
+                        </div>
+                        <div class="skill">
+                            <div><strong>Machine Learning</strong></div>
+                        </div>
+                        <div class="skill">
+                            <div><strong>Data Visualization</strong></div>
+                        </div>
+                        <div class="skill">
+                            <div><strong>UI / UX</strong></div>
+                        </div>
+                        <div class="skill">
+                            <div><strong>Web Dev</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <div class="section-head">
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects">
+                    <article class="project">
+                        <h4>Farm Fresh Bid</h4>
+                        <div class="meta">Mini project · Web marketplace with bidding</div>
+                        <p style="margin-top:8px">Built a platform to connect farmers and customers directly with a real-time bidding flow to improve pricing. Implemented front-end interfaces and bidding logic with Django backend and Firebase for real-time updates.</p>
+                        <div class="subtext" style="margin-top:10px"><strong>Tech:</strong> HTML · CSS · JavaScript · Django · Firebase</div>
+                    </article>
+
+                    <article class="project">
+                        <h4>Placeholder Project</h4>
+                        <div class="meta">Concept / Prototype</div>
+                        <p style="margin-top:8px">Add another project here — short description and key contributions. Replace this with an actual project when ready.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CERTS -->
+            <section id="certification">
+                <div class="section-head">
+                    <h2>Certification</h2>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert"><strong>Diploma in Computer Application & Tally-GST</strong>
+                        <div class="subtext" style="margin-top:6px">Dec 2020</div>
+                    </div>
+                    <div class="cert"><em>Add more certificates or images here</em></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>© 2025 Harshith K • Built with neon vibes ✦</footer>
+    </div>
+</body>
+
+</html>
